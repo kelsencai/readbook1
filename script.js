@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <a href="#" id="back-to-books">返回书本选择</a>
         `;
 
+        // 重新绑定“开灯”按钮事件
+        document.getElementById('light-mode-toggle').addEventListener('click', toggleLightMode);
+
         const chapterList = document.getElementById('chapter-list');
         book.chapters.forEach(chapter => {
             const li = document.createElement('li');
@@ -65,6 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 `;
 
+                // 重新绑定“开灯”按钮事件
+                document.getElementById('light-mode-toggle').addEventListener('click', toggleLightMode);
+
                 // 添加事件监听器
                 document.getElementById('back-to-chapters').addEventListener('click', () => loadChapters(books.find(b => b.name === bookName)));
                 document.getElementById('back-to-books').addEventListener('click', () => location.reload());
@@ -76,9 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return text.split('\n').map(line => `<p>${line}</p>`).join('');
     }
 
-    // 白天/夜间模式切换
-    toggleButton.addEventListener('click', () => {
+    // 白天/夜间模式切换函数
+    function toggleLightMode() {
         body.classList.toggle('light-mode');
         toggleButton.textContent = body.classList.contains('light-mode') ? '关灯' : '开灯';
-    });
+    }
+
+    // 初始化绑定“开灯”按钮事件
+    toggleButton.addEventListener('click', toggleLightMode);
 });
