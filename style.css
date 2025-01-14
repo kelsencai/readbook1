@@ -1,53 +1,51 @@
+/* 基础样式 */
 body {
-    background-color: #121212;
-    color: #E0E0E0;
+    background-color: #121212; /* 默认夜间模式背景色 */
+    color: #E0E0E0; /* 默认夜间模式文字颜色 */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
 a {
-    color: #1ABC9C;
-    text-decoration:none
+    color: #1ABC9C; /* 链接颜色 */
+    text-decoration: none; /* 去掉下划线 */
 }
 
 a:hover {
-    color: #26D1CF;
-    text-decoration: underline;
+    color: #26D1CF; /* 鼠标悬停时链接颜色 */
+    text-decoration: underline; /* 添加下划线 */
 }
 
+/* 白天模式 */
 .light-mode {
-    background-color: #E0E0E0;
-    color: #121212;
+    background-color: #E0E0E0; /* 白天模式背景色 */
+    color: #121212; /* 白天模式文字颜色 */
 }
 
-#light-mode {
-    color: #007BFF;
-    text-decoration:none
+.light-mode a {
+    color: #007BFF; /* 白天模式链接颜色 */
 }
 
-#light-mode:hover {
-    color: #0056b3;
-    text-decoration: underline;
+.light-mode a:hover {
+    color: #0056b3; /* 白天模式鼠标悬停时链接颜色 */
 }
 
-.dark-mode {
-    background-color: #121212;
-    color: #E0E0E0;
+/* 容器样式 */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-#dark-mode {
-    color: #1ABC9C;
-    text-decoration:none
-}
-
-#dark-mode:hover {
-    color: #26D1CF;
-    text-decoration: underline;
-}
-
+/* 按钮样式 */
 .toggle-btn, .jump-to-page-btn {
     font-size: 16px;
     padding: 5px 10px;
-    background-color: #444;
-    color: #E0E0E0;
+    background-color: #444; /* 按钮背景色 */
+    color: #E0E0E0; /* 按钮文字颜色 */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -55,29 +53,23 @@ a:hover {
 }
 
 .toggle-btn {
-    float: right;
+    float: right; /* 将按钮放在右上角 */
 }
 
 .toggle-btn:hover, .jump-to-page-btn:hover {
-    background-color: #666;
+    background-color: #666; /* 鼠标悬停时按钮背景色 */
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 5px; 
-    box-sizing: border-box; 
-    font-size: 21px;
-}
-
+/* 内容样式 */
 .content {
-    line-height: 1.6; 
-    word-wrap: break-word; 
-    white-space: normal; 
-    text-indent: 0; 
-    font-size: 21px;
+    line-height: 1.6;
+    word-wrap: break-word;
+    white-space: normal;
+    text-indent: 0;
+    font-size: 21px; /* 默认字体大小 */
 }
 
+/* 导航样式 */
 .navigation {
     margin-top: 20px;
     text-align: center;
@@ -88,6 +80,53 @@ a:hover {
     margin-top: 10px;
 }
 
+/* 输入框样式 */
 input {
     font-size: 18px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 字体大小控制 */
+.font-size-controls a {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/* 返回菜单样式 */
+.back-to-menu {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* 图片样式 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 分页样式 */
+.jump-to-page {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.jump-to-page-btn {
+    margin-left: 10px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .toggle-btn {
+        float: none;
+        display: block;
+        margin: 10px auto;
+    }
 }
